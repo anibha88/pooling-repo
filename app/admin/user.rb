@@ -13,5 +13,11 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+show do |u|
+   default_main_content
+   panel "Your Added Stuff" do
+     u.status
+   end
+ end
 
 end
