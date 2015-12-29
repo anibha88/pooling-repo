@@ -13,5 +13,31 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+index do
+    selectable_column
+    id_column
+    column :email
+    column :current_sign_in_at
+    column :sign_in_count
+    column :created_at
+    column "Approve" do |user|
+      link_to("Approve", status_approve_path(id: user), method: :get )
+    end
+    column "Reject" do |user|
+      link_to("Reject", status_reject_path(id: user), method: :get )
+    end
+    column :approved
+    actions
+end
+
+show do |u|
+   default_main_content
+   panel "Your Added Stuff" do
+     u.approved
+
+   end
+ end
+
+
 
 end

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'status/approve'
+  get 'status/reject'
+
   resources :posts
   root to: 'posts#index'
   devise_for :users
