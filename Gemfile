@@ -21,6 +21,7 @@ gem 'devise'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'formtastic'
+gem 'sendgrid', '~> 1.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
