@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'profile/index'
+
+  get 'profile/show'
+
   get 'status/approve'
   get 'status/reject'
 
