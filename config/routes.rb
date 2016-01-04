@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'profile/index'
 
   get 'profile/show'
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   get 'status/reject'
 
   resources :posts
-  root to: 'posts#index'
+  root to: 'home#index'
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
