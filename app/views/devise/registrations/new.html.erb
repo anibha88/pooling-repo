@@ -15,7 +15,7 @@
 
   <div class="field">
     <%= f.label :gender %><br />
-    <%= f.select :gender, options_for_select(%w[Male Female]) %> 
+    <%= f.select :gender, options_for_select(%w[Male Female]) %>
   </div>
 
   <div class="field">
@@ -26,7 +26,7 @@
   <div class="field">
     <%= f.label :birth_year %><br />
     <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select year" %>
-  </div> 
+  </div>
 
   <div class="field">
     <%= f.label :password %>
