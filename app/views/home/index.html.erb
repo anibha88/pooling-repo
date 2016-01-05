@@ -42,17 +42,7 @@ Although you can use them, for a more unique website, replace these images with 
                     <li class="active">
                         <a href="<%= new_user_session_path %>">Login</a>
                     </li>
-                    <li>
-                        <a href="#">Products</a>
-                    </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="about-us">
-              <li><a href="#">Engage</a></li>
-              <li><a href="#">Pontificate</a></li>
-              <li><a href="#">Synergize</a></li>
-            </ul>
-          </li>
+
                     <li>
                         <a href="#">Contact</a>
                     </li>
@@ -91,7 +81,7 @@ Although you can use them, for a more unique website, replace these images with 
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <img class="img-responsive img-circle center-block" src="assets/4p.png" alt="">
+                <%= image_tag '4p.png', :class => "img-responsive img-circle center-block"%>
                 </div>
                 <div class="col-sm-6">
                   <h2 class="section-header">Best in Class</h2>
@@ -113,7 +103,8 @@ Although you can use them, for a more unique website, replace these images with 
                   <a href="#" class="btn btn-default btn-lg">Test It</a>
                 </div>
                 <div class="col-sm-6">
-                    <img class="img-responsive img-circle center-block" src="assets/pool.jpg" alt="", width="80%">
+
+                  <%= image_tag 'pool.jpg',:class => "img-responsive img-circle center-block", :width => "80%" %>
                 </div>
 
             </div>
@@ -171,11 +162,7 @@ Although you can use them, for a more unique website, replace these images with 
         </div>
 
         <!-- Copyright etc -->
-        <div class="small-print">
-          <div class="container">
-            <p>Copyright &copy; Example.com 2015</p>
-          </div>
-        </div>
+
 
     </footer>
 
