@@ -4,8 +4,28 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select :gender, options_for_select(%w[Male Female]) %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_year %><br />
+    <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select year" %>
   </div>
 
   <div class="field">
@@ -19,6 +39,12 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar %>
+    <b><i>Please upload your profile picture</i></b>
+    <%= f.file_field :avatar %>
   </div>
 
   <div class="actions">

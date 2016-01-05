@@ -1,0 +1,12 @@
+<br/><br/><br/>
+<div align="center">
+<div class="container">
+  <p align="center" style="color: white"><%= @user.first_name + ' ' + @user.try(:last_name) %></p><br/>
+  <%# binding.pry %>
+  <% unless @user.avatar.present? %>
+    <%= image_tag "dummyhuman.jpg", :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% else %>
+    <%= image_tag @user.avatar, :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% end %>
+</div>
+</div>

@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
+gem 'carrierwave'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -21,6 +22,7 @@ gem 'devise'
 gem 'ransack',             github: 'ernie/ransack'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'formtastic'
+gem 'sendgrid', '~> 1.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,6 +46,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 group :production do
