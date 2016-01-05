@@ -1,10 +1,12 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
-
-<h3>Hello <%= @user.email %></h3>
-<h4> Your personal information </h4>
-
-<p> Gender : <%=@user.gender %> </p>
-<p> First Name : <%=@user.first_name %> </p>
-<p> Last Name : <%=@user.last_name %> </p>
-
+<br/><br/><br/>
+<div align="center">
+<div class="container">
+  <p align="center" style="color: white"><%= @user.first_name + ' ' + @user.try(:last_name) %></p><br/>
+  <%# binding.pry %>
+  <% unless @user.avatar.present? %>
+    <%= image_tag "dummyhuman.jpg", :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% else %>
+    <%= image_tag @user.avatar, :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% end %>
+</div>
+</div>
