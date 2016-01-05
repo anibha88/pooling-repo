@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chattiness: MyString
+  smoking: MyString
+  pets: MyString
+  music: MyString
+
+two:
+  chattiness: MyString
+  smoking: MyString
+  pets: MyString
+  music: MyString

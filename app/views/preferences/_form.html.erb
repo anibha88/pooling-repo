@@ -1,0 +1,34 @@
+<%= form_for(@preference) do |f| %>
+  <% if @preference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@preference.errors.count, "error") %> prohibited this preference from being saved:</h2>
+
+      <ul>
+      <% @preference.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chattiness %><br>
+    <%= f.select :chattiness, [ "I'm the quiet type :) ","I talk depending on my mood","I love to chat"], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :smoking %><br>
+    <%= f.select :smoking, [ "No smoking in the car please",'Smoking in the car is okay sometimes',"Smoking in the car doesn't bother me" ], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :pets %><br>
+    <%= f.select :pets, [ "No pets in the car please",'Depends on the animal','Pets welcome. Woof!'], :prompt => 'Select One' %>
+  </div>
+  <div class="field">
+    <%= f.label :music %><br>
+    <%= f.select :music, [ 'Silence is golden :)','I listen to music if I fancy it',"It's all about the playlist" ], :prompt => 'Select One' %>
+  </div>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

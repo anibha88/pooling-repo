@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validate :check_age
  
   has_many :posts
+  has_one :preference
 
   def check_age
     # binding.pry
