@@ -1,32 +1,12 @@
-
-      <%= image_tag @user.avatar_url, :class => "img-circle img-responsive pull-left col-sm-2" %><br/>
-      <div class="row-fluid">
-          <div class="span3">
-              <p>
-                <a href="http://twitter.com" rel="nofollow" title="Bootply on Twitter" target="ext">Twitter</a><br>
-                <a href="https://plus.google.com" rel="publisher">Google+</a><br>
-                <a href="http://facebook.com" rel="nofollow" title="Bootply on Facebook" target="ext">Facebook</a><br>
-              </p>
-          </div>
-      </div><br/><br/>
-
-      <div class="row">
-        <div class="col-sm-3">
-            <!--left col-->
-            <ul class="list-group">
-                <li class="list-group-item text-muted" contenteditable="false">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Joined</strong></span><%= @user.created_at.to_date %></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong class="">Last seen</strong></span><%= @user.last_sign_in_at.time %></li>
-                    <li class="list-group-item text-right"><span class="pull-left"><strong class="">Real name</strong></span><%= @user.try(:first_name) + ' ' + @user.try(:last_name) %></li>
-              <li class="list-group-item text-right"><span class="pull-left"><strong class="">Role: </strong></span>User</li>
-            </ul>
-           <div class="panel panel-default">
-             <div class="panel-heading">Insured / Bonded?
-
-                </div>
-                <div class="panel-body"><i style="color:green" class="fa fa-check-square"></i> Yes, I am insured and bonded.
-
-                </div>
-            </div>
-        </div>
-      </div>
+<br/><br/><br/>
+<div align="center">
+<div class="container">
+  <p align="center" style="color: white"><%= @user.first_name + ' ' + @user.try(:last_name) %></p><br/>
+  <%# binding.pry %>
+  <% unless @user.avatar.present? %>
+    <%= image_tag "dummyhuman.jpg", :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% else %>
+    <%= image_tag @user.avatar, :class => "img-circle", :alt => "Cinque Terre",  :width => "500", :height => "460" %>
+  <% end %>
+</div>
+</div>
