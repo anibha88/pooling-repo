@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sample test app for active admin</title>
+  <title>Pooling Car</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-  <header class="navbar navbar-default" role="navigation">
-    <div class="navbar-inner">
-      <div class="container">
-        <div id="logo" class="navbar-brand"><%= link_to "Test App", root_path %></div>
-        <nav class="collapse navbar-collapse navbar-ex1-collapse">
-          <% if user_signed_in? -%>
-            <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'My Profile', profile_show_path %></li>
-              <li><%= link_to 'Submit link', new_post_path %></li>
-              <li><%= link_to 'Account', edit_user_registration_path %></li>
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-            </ul>
-          <% else -%>
-            <ul class="nav navbar-nav pull-right">
-              <li><%= link_to 'Sign up', new_user_registration_path %></li>
-              <li><%= link_to 'Sign in', new_user_session_path %></li>
-            </ul>
-          <% end -%>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <div id="main_content" class="container">
-    <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-info") %>
-    <% end %>
-
-      <div id="content" class="col-md-9 center-block">
-        <%= yield %>
-      </div>
-    </div>
-  </div>
+<%= yield %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
