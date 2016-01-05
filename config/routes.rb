@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
 
+  resources :preferences
   get 'profile/index'
 
   get 'profile/show'
