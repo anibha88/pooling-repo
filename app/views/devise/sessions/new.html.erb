@@ -1,3 +1,4 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
 <div class="container">
     <div class="row">
@@ -11,13 +12,13 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email" required="">
+                            <%= f.email_field :email, autofocus: true, :class => "form-control",:id => "inputEmail3" %>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password" required="">
+                                <%= f.password_field :password, autocomplete: "off", :class => "form-control",:id => "inputPassword3" %>
                             </div>
                         </div>
                         <div class="form-group">
@@ -30,16 +31,17 @@
                         </div>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm">Sign in</button>
+                                <%= f.submit "Log in", :class => "btn btn-success btn-sm" %>
                                 <button type="reset" class="btn btn-default btn-sm">Reset</button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="panel-footer">Not Registered? <a href="<% edit_user_registration_path %>" class="">Register here</a>
+                <div class="panel-footer">Not Registered? <a href="<%= new_user_registration_path %>" class="">Register here</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<% end %>

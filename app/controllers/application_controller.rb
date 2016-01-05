@@ -11,4 +11,14 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :first_name, :last_name, :email, :gender, :password, :remember_me) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation, :current_password) }
   end
+
+  def after_sign_in_path_for(resource)
+  stored_location_for(resource) ||
+    if resource.is_a?(Admin)
+      admin_dashboard_path
+    else
+      posts_path
+    end
+  end
+
 end
