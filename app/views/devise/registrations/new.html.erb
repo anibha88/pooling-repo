@@ -1,55 +1,51 @@
-<h2>Sign up</h2>
+<%= form_for(resource, as: resource_name, html: {:class => 'form-signin'}, url: registration_path(resource_name)) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+        <body class="pull-right">
+            <div class="container">
+                <div class="row vertical-offset-50">
+                    <div class="col-md-5 col-md-offset-8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row-fluid user-row">
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <form accept-charset="UTF-8" role="form" class="form-signin">
+                                        <label class="panel-login">
+                                            <div class="login_result"></div>
+                                        </label>
 
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
+                                        <%= f.text_field :first_name, autofocus: true, :class => "form-control",:id => "username", :placeholder => "First Name" %><br/>
 
-  <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.select :gender, options_for_select(%w[Male Female]) %>
-  </div>
+                                        <%= f.text_field :last_name, autofocus: true, :class => "form-control",:id => "username", :placeholder => "Last Name" %><br/>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+                                        <%= f.email_field :email, autofocus: true, :class => "form-control",:id => "username", :placeholder => "Email" %><br/>
 
-  <div class="field">
-    <%= f.label :birth_year %><br />
-    <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select year" %>
-  </div>
+                                        <%= f.select :gender, options_for_select(%w[Male Female]), :placeholder => "Gender" %>  <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select birth year" %><br/><br/>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                                        <%= f.password_field :password, autocomplete: "off", :class => "form-control",:id => "password", :placeholder => "Password" %>
+                                        <br>
 
-  <div class="field">
-    <%= f.label :avatar %>
-    <b><i>Please upload your profile picture</i></b>
-    <%= f.file_field :avatar %>
-  </div>
+                                        <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control",:id => "password", :placeholder => "Confirm Password" %><br/>
+                                        
+                                        <b><i>Please upload your profile picture</i></b>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+                                        <%= f.file_field :avatar,:placeholder => "Your profile picture", :class => "form-control" %><br/>
+
+                                        <%= f.submit "Sign Up", :class => "btn btn-success btn-sm", :id =>"login" %><input type="checkbox" class="">Remember me</label><br/></br>
+
+                                        <div class="panel-footer">Not Registered? <a href="<%= new_user_registration_path %>" class="">Register here</a>
+                                        <%= link_to "Home", home_index_path, :class => "col-md-offset-4" %>
+                                        </div><br/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </div>
 <% end %>
-
-<%= render "devise/shared/links" %>

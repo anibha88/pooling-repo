@@ -10,9 +10,10 @@ class User < ActiveRecord::Base
   has_one :preference
 
   def check_age
-    # binding.pry
-    if Time.now.year - self.birth_year < 18
-      errors.add(:birth_year, "You should be at least 18 years of age. ")
+    unless sign_in_count == 0
+      if Time.now.year - self.try(:birth_year) < 18
+        errors.add(:birth_year, "You should be at least 18 years of age. ")
+      end
     end
   end
 
