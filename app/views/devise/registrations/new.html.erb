@@ -21,16 +21,21 @@
 
                                         <%= f.text_field :last_name, autofocus: true, :class => "form-control",:id => "username", :placeholder => "Last Name" %><br/>
 
-                                        <%= f.text_field :last_name, autofocus: true, :class => "form-control",:id => "username", :placeholder => "Last Name" %><br/>
+                                        <%= f.email_field :email, autofocus: true, :class => "form-control",:id => "username", :placeholder => "Email" %><br/>
 
-                                        <%= f.select :gender, options_for_select(%w[Male Female]), :placeholder => "Gender" %>  <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select year" %><br/><br/>
+                                        <%= f.select :gender, options_for_select(%w[Male Female]), :placeholder => "Gender" %>  <%= f.select :birth_year, (1950..Time.now.year).to_a, :prompt => "Select birth year" %><br/><br/>
+
 
                                         <%= f.password_field :password, autocomplete: "off", :class => "form-control",:id => "password", :placeholder => "Password" %>
                                         <br>
 
                                         <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control",:id => "password", :placeholder => "Confirm Password" %><br/>
+                                        
+                                        <b><i>Please upload your profile picture</i></b>
 
-                                        <%= f.submit "Log in", :class => "btn btn-success btn-sm", :id =>"login" %><input type="checkbox" class="">Remember me</label><br/></br>
+                                        <%= f.file_field :avatar,:placeholder => "Your profile picture", :class => "form-control" %><br/>
+
+                                        <%= f.submit "Sign Up", :class => "btn btn-success btn-sm", :id =>"login" %><input type="checkbox" class="">Remember me</label><br/></br>
 
                                         <div class="panel-footer">Not Registered? <a href="<%= new_user_registration_path %>" class="">Register here</a>
                                         <%= link_to "Home", home_index_path, :class => "col-md-offset-4" %>
