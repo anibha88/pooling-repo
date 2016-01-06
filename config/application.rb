@@ -24,6 +24,7 @@ module ActiveAdminTest
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.assets.paths << "#{Rails}/assets/fonts"
+    config.assets.precompile += %w( *.eot *.svg *.ttf *.woff *.otf)
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
