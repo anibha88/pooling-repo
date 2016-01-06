@@ -26,7 +26,7 @@
 
     body {
         background-color: #444;
-        background: url(http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg);
+        background-image: url("/assets/background.jpg");
 
     }
     .form-signin input[type="text"] {
