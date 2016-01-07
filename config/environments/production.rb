@@ -5,7 +5,9 @@ Rails.application.configure do
   config.cache_classes = true
 
   config.assets.compile = true
-  config.assets.precompile += %w( *.js *.css *.eot *.woff *.ttf *.svg )
+  # config.assets.precompile += %w( *.js *.css *.eot *.woff *.ttf *.svg *.otf )
+  config.assets.precompile += %w(active_admin.css active_admin/print.css rsvp.css)
+  config.assets.precompile += %w(active_admin.js global.js rsvp.js)
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
