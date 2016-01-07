@@ -6,6 +6,7 @@ Rails.application.configure do
 
   config.assets.compile = true
   # config.assets.precompile += %w( *.js *.css *.eot *.woff *.ttf *.svg *.otf )
+  config.assets.precompile =  ['.js', '.css', '*.css.erb']
   config.assets.precompile += %w(active_admin.css active_admin/print.css rsvp.css)
   config.assets.precompile += %w(active_admin.js global.js rsvp.js)
   # Eager load code on boot. This eager loads most of Rails and
